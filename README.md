@@ -115,12 +115,11 @@ SAS format to right justify character variables
     run;quit;                                                                          
                                                                                        
     proc transpose data=sashelp.class(firstobs=10 obs=12) out=xpo;                     
-    format _character_ $8. _numeric_ 4.;                                               
+    format _character_ $charRight8. _numeric_ 4.;                                               
     id name;                                                                           
     var _all_;                                                                         
     run;quit;                                                                          
                                                                                        
-    proc print data=xpo;                                                               
-    format _character_ $charRight8.;                                                   
+    proc print data=xpo;                                                                                                            
     run;quit;                                                                          
                                                                                        
